@@ -17,6 +17,7 @@ Version 0.3
 Copyright 2004 by [Sebastian Pech](http://www.spech.de)
 
 Control:
+```txt
        ###### Keys #####
 Var  - Increase - Decrease
 m1   - q          a
@@ -31,6 +32,10 @@ Hold [shift] for 0.1 steps
 Camera can be moved by using the [arrow keys]
 [Space] is used to switch between dot and line mode
 Press [Escape] to quit
+```
+
+![1](https://github.com/spech66/superformel-simulator/blob/master/001.jpg)
+![2](https://github.com/spech66/superformel-simulator/blob/master/002.jpg)
 
 ### LINUX
 Copy liblf3d.so to /usr/lib or modify your Lib Path
