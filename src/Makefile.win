@@ -1,0 +1,20 @@
+progname = super.exe
+OBJECTS = main.o
+CXX= /opt/xmingw/bin/i386-mingw32msvc-g++
+
+CCFLAGS= -lm -Wl -export-dynamic
+
+INCLUDES = -I/opt/xmingw/bin/include `sdl-config --cflags` `audiere-config --cxxflags`
+
+LIBS= -L/opt/xmingw/bin/lib -L../lightfire3d/src -llf3d -lopengl32 -lglu32 -L../Lightfire3D/libs/mingw32sdl/lib \
+	-lmingw32 -lSDLmain -lSDL -mwindows ../Lightfire3D/libs/audiere/lib/audiere.lib
+
+$(progname) : $(OBJECTS)
+	$(CXX) -o $(progname) $(CCFLAGS) $(OBJECTS) $(LIBS)
+
+%.o: %.cpp %.h
+	$(CXX) -c $< $(INCLUDES)
+
+.PHONY : clean
+clean :
+	rm -f $(progname) $(OBJECTS)
